@@ -6,7 +6,7 @@ import { skills, experiences, projects } from "../profile";
 import Link from "next/link";
 
 const Home = () => (
-  <Layout>
+  <Layout dark>
     {/** first section */}
     <header className="row">
       <div className="col-md-12">
