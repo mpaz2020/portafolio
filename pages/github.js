@@ -36,7 +36,7 @@ const Github = ({ user, statusCode }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const res = await fetch("https://api.github.com/users/fazttech");
   const data = await res.json();
 
