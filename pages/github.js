@@ -15,12 +15,14 @@ const Github = ({ user, statusCode }) => {
             <p>{user.bio}</p>
             <a
               href={user.blog}
+              rel="noreferrer"
               target="_blank"
               className="btn btn-outline-secondary my-2"
             >
               My Blog
             </a>
             <a
+              rel="noreferrer"
               href={user.html_url}
               target="_blank"
               className="btn btn-outline-secondary"
