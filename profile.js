@@ -12,14 +12,20 @@ export const profile = {
   location: "Piura, Perú",
   available: true,
   availableText: "Disponible para nuevos proyectos",
-  photo: "/3052.png", // TODO: reemplaza por tu foto real (ej. "/medardo.jpg" en /public)
+  photo: "/547217536_24525599753739049_8484697424851252016_n.jpg",
   email: "medpazord2010@gmail.com",
+  // Endpoint de Formspree para que el formulario envíe el correo directo, sin abrir
+  // el cliente de correo del visitante. Crea un formulario en https://formspree.io
+  // y pega aquí la URL (ej: "https://formspree.io/f/abcdwxyz"). Vacío = usa mailto.
+  formEndpoint: "https://formspree.io/f/xgakajzn",
   github: "mpaz2020", // usuario de GitHub (se usa en /github)
   socials: [
     { label: "GitHub", href: "https://github.com/mpaz2020" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/medardo-paz-ordo%C3%B1ez-a6b3a6129" },
   ],
-  cv: "", // ej: "/cv-medardo-paz.pdf" (coloca el PDF en /public). Vacío = botón oculto
+  // CV alojado en Google Drive. Para actualizarlo sin redesplegar: en Drive, clic derecho
+  // sobre el archivo → Administrar versiones → Subir nueva versión (el enlace no cambia).
+  cv: "https://drive.google.com/uc?export=download&id=1qYslCbyRlf-u72u06qBJ1aZpAR8t58lR",
   about: [
     "Soy ingeniero informático egresado de la Universidad Nacional de Piura. Desde diciembre de 2020 trabajo como ingeniero de software en TGI Ingeniería, donde diseño e implemento aplicaciones web y móviles, APIs REST y GraphQL, y manejo bases de datos relacionales.",
     "Mi trabajo combina el desarrollo de software con la integración de sistemas industriales: protocolos como OPC-UA, MQTT y WebSockets, además de frameworks como Laravel, Vue, Angular, React, Quasar, Ionic y Flutter.",

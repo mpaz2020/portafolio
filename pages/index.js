@@ -46,15 +46,35 @@ const Home = () => {
   const cats = useMemo(() => ["Todos", ...Array.from(new Set(projects.map((p) => p.category)))], []);
   const [cat, setCat] = useState("Todos");
   const shown = projects.filter((p) => cat === "Todos" || p.category === cat);
-  const [sent, setSent] = useState(false);
+  // idle | sending | ok | mailto | error
+  const [status, setStatus] = useState("idle");
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const f = new FormData(e.target);
+    const form = e.target;
+    const f = new FormData(form);
+
+    if (profile.formEndpoint) {
+      setStatus("sending");
+      try {
+        const res = await fetch(profile.formEndpoint, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: f,
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        setStatus("ok");
+      } catch (err) {
+        setStatus("error");
+      }
+      return;
+    }
+
     const subject = encodeURIComponent(`Contacto desde tu portafolio: ${f.get("name")}`);
     const body = encodeURIComponent(`${f.get("message")}\n\n— ${f.get("name")} (${f.get("email")})`);
     window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("mailto");
   };
 
   return (
@@ -275,10 +295,14 @@ const Home = () => {
               Mensaje
               <textarea name="message" rows="4" required placeholder="¿En qué puedo ayudarte?" />
             </label>
-            <button className="btn btn--primary" type="submit">
-              Enviar mensaje
+            <button className="btn btn--primary" type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Enviando…" : "Enviar mensaje"}
             </button>
-            {sent && <p className="muted">Se abrió tu cliente de correo para enviar el mensaje.</p>}
+            <p className="muted" role="status" aria-live="polite">
+              {status === "ok" && "¡Mensaje enviado! Te responderé pronto."}
+              {status === "mailto" && "Se abrió tu cliente de correo para enviar el mensaje."}
+              {status === "error" && `No se pudo enviar. Escríbeme directo a ${profile.email}.`}
+            </p>
           </form>
         </Reveal>
       </section>
