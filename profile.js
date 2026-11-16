@@ -4,7 +4,7 @@
 // ============================================================
 
 export const profile = {
-  name: "Medardo Paz",
+  name: "Medardo Paz Ordóñez",
   initials: "MP",
   roles: ["Ingeniero Informático", "Ingeniero de Software", "Desarrollador Full Stack"],
   tagline:
@@ -122,57 +122,81 @@ export const education = [
 ];
 
 export const projectsNote =
-  "Muchos de los proyectos que desarrollo en TGI Ingeniería son privados o de clientes; puedo mostrarlos o describirlos a pedido. Aquí tienes una selección de trabajos públicos.";
+  "Sistemas que desarrollo en TGI Ingeniería y están desplegados en dominios públicos (con acceso restringido por inicio de sesión). Otros proyectos corren en servidores privados de clientes; puedo describirlos a pedido. Mi código público está en GitHub.";
 
 // Sin "image" se muestra un fondo con ícono. Cuando tengas capturas, ponlas en /public
 // y agrega: image: "mi-captura.png"
 export const projects = [
   {
-    name: "Sistema de asistencia",
-    description: "Servicio de Windows en .NET 8 para integrar un terminal biométrico ZKTeco.",
-    icon: "🕒",
-    tags: [".NET 8", "Windows Service", "ZKTeco"],
+    name: "SMI · Telemetría de planta",
+    description: "Dashboards web de telemetría de PLC industriales: producción, rendimiento y reportes en tiempo real.",
+    icon: "🏭",
+    image: "smi.jpg",
+    tags: ["Nuxt", "Vue", "MQTT", "ECharts", "PostgreSQL"],
     category: "Integración",
-    repo: "https://github.com/mpaz2020/sistema-asistencia",
+    demo: "https://smi.tgiperu.com",
   },
   {
-    name: "Colector Modbus / cliente OPC-UA",
-    description: "Colector de datos Modbus en Node.js y clientes OPC-UA (Node.js y Python).",
-    icon: "📡",
-    tags: ["Node.js", "Python", "OPC-UA", "Modbus"],
+    name: "Monitoreo de subestación eléctrica",
+    description: "SCADA web con ~200 variables OPC-UA, diagrama unifilar interactivo y paneles HMI por alimentador.",
+    icon: "⚡",
+    image: "subestacion.jpg",
+    tags: ["Nuxt", "OPC-UA", "TimescaleDB", "SSE"],
     category: "Integración",
-    repo: "https://github.com/mpaz2020/ColectorModbus",
+    demo: "https://unna-scada-electrico.tgiperu.com",
   },
   {
-    name: "Perupez",
-    description: "Aplicación desarrollada para Perupez Sechura.",
-    icon: "🐟",
-    tags: ["TypeScript"],
+    name: "Crickets · Monitoreo de producción",
+    description: "Tablero en vivo, alertas, histórico y reportes de una línea de pelado, con ingesta vía MQTT y AWS IoT.",
+    icon: "🦗",
+    image: "crickets.jpg",
+    tags: ["Nuxt", "Hono", "AWS IoT", "Lambda", "PostgreSQL"],
+    category: "Integración",
+    demo: "https://crickets.tgiperu.com",
+  },
+  {
+    name: "Pedregal · Flota en vivo",
+    description: "Seguimiento GPS de flota sobre mapa satelital, con geocercas e histórico de telemetría.",
+    icon: "🚜",
+    image: "pedregal.jpg",
+    tags: ["Nuxt", "Hono", "MQTT", "TimescaleDB", "PostGIS"],
+    category: "Integración",
+    demo: "https://pedregal.tgiperu.com",
+  },
+  {
+    name: "Sistema de Operaciones TGI",
+    description: "Plataforma interna para gestionar flota, personal, proyectos y servicios de la empresa.",
+    icon: "🧭",
+    image: "operaciones.jpg",
+    tags: ["Nuxt", "Drizzle", "Supabase", "Cloudflare"],
     category: "Web",
-    repo: "https://github.com/mpaz2020/perupez",
+    demo: "https://operaciones.tgiperu.com",
   },
   {
-    name: "SGIP Agroaurora",
-    description: "Aplicación web desarrollada con Vue.",
-    icon: "🌱",
-    tags: ["Vue"],
+    name: "SGMO · Gestión de mano de obra",
+    description: "Asistencia biométrica, planeación, cuadrillas y planilla semanal para obras de construcción.",
+    icon: "👷",
+    image: "sgmo.jpg",
+    tags: [".NET", "SignalR", "Azure"],
     category: "Web",
-    repo: "https://github.com/mpaz2020/sgip-agroaurora",
+    demo: "https://sgmo.losportales.com.pe",
   },
   {
-    name: "Tienda en línea",
-    description: "Tienda virtual construida con Laravel y plantillas Blade.",
-    icon: "🛒",
-    tags: ["Laravel", "PHP", "Blade"],
+    name: "Culqui · Monitoreo de energía",
+    description: "Diagrama unifilar interactivo con potencia en tiempo real por planta, gráficos y alertas. API en Fastify y Prisma, frontend en Quasar.",
+    icon: "💳",
+    image: "culqui.jpg",
+    tags: ["Fastify", "Prisma", "Quasar", "Vue"],
     category: "Web",
-    repo: "https://github.com/mpaz2020/tiendaenlinea",
+    demo: "https://app.culqui.io",
   },
   {
-    name: "Dashboards",
-    description: "Paneles de control en Vue y aplicaciones móviles en Flutter.",
-    icon: "📊",
-    tags: ["Vue", "Flutter", "Dart"],
-    category: "Móvil",
-    repo: "https://github.com/mpaz2020/dashboard",
+    name: "Chris Cakes",
+    description: "Tortas personalizadas: galería, pedido con cotización, adelanto por Yape/Plin, seguimiento y panel de administración.",
+    icon: "🎂",
+    image: "chris-cakes.jpg",
+    tags: ["Next.js", "Tailwind", "Neon", "Drizzle", "Vercel"],
+    category: "Web",
+    demo: "https://chris-cakes.vercel.app",
   },
 ];
