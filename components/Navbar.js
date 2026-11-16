@@ -1,40 +1,84 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { profile } from "../profile";
+import { useTheme } from "./useTheme";
 
-const Navbar = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div className="container">
-      <Link href="/">
-        <a className="navbar-brand">
-          Portafolio
-        </a>
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-            <Link href="/blog">
-              <a className="nav-link">Blog</a>
+const links = [
+  { id: "sobre-mi", label: "Sobre mí" },
+  { id: "habilidades", label: "Habilidades" },
+  { id: "experiencia", label: "Experiencia" },
+  { id: "proyectos", label: "Proyectos" },
+  { id: "contacto", label: "Contacto" },
+];
+
+const Navbar = () => {
+  const { pathname } = useRouter();
+  const [theme, toggle] = useTheme();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
+  const home = pathname === "/";
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!home || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    links.forEach((l) => {
+      const el = document.getElementById(l.id);
+      el && io.observe(el);
+    });
+    return () => io.disconnect();
+  }, [home]);
+
+  return (
+    <header className={`nav ${scrolled || open ? "nav--solid" : ""}`}>
+      <div className="container nav__inner">
+        <Link href="/">
+          <a className="brand" aria-label="Inicio">
+            <span className="brand__mark">{profile.initials}</span>
+            <span className="brand__name">{profile.name}</span>
+          </a>
+        </Link>
+        <nav className={`nav__links ${open ? "open" : ""}`} aria-label="Principal">
+          {links.map((l) => (
+            <Link key={l.id} href={`/#${l.id}`}>
+              <a className={home && active === l.id ? "active" : ""} onClick={() => setOpen(false)}>
+                {l.label}
+              </a>
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/github">
-              <a className="nav-link">Github</a>
-            </Link>
-          </li>
-        </ul>
+          ))}
+          <Link href="/blog">
+            <a className={pathname.startsWith("/blog") || pathname.startsWith("/post") ? "active" : ""} onClick={() => setOpen(false)}>
+              Blog
+            </a>
+          </Link>
+          <Link href="/github">
+            <a className={pathname === "/github" ? "active" : ""} onClick={() => setOpen(false)}>
+              GitHub
+            </a>
+          </Link>
+        </nav>
+        <div className="nav__actions">
+          <button className="icon-btn" onClick={toggle} aria-label="Cambiar tema" title="Cambiar tema">
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
+          <button className="icon-btn nav__burger" onClick={() => setOpen(!open)} aria-label="Menú" aria-expanded={open}>
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
-);
+    </header>
+  );
+};
 
 export default Navbar;
