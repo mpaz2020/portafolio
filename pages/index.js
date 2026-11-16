@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import { Layout } from "../components/Layout";
 import Reveal from "../components/Reveal";
-import { profile, stats, services, skillGroups, experiences, education, projects, posts } from "../profile";
+import { profile, stats, services, skillGroups, experiences, education, projects, projectsNote } from "../profile";
 
 const Typing = ({ words }) => {
   const [i, setI] = useState(0);
@@ -100,9 +99,9 @@ const Home = () => {
           <div className="avatar">
             <img src={profile.photo} alt={`Foto de ${profile.name}`} />
           </div>
-          <div className="float float--a">⚛️ React · Vue</div>
+          <div className="float float--a">⚛️ Vue · React</div>
           <div className="float float--b">🟢 Node.js</div>
-          <div className="float float--c">🗄️ SQL</div>
+          <div className="float float--c">📡 OPC-UA · MQTT</div>
         </div>
       </section>
 
@@ -203,7 +202,7 @@ const Home = () => {
 
       {/* PROJECTS */}
       <section className="section container" id="proyectos">
-        <SectionHead eyebrow="Portafolio" title="Proyectos destacados" text="Una selección de trabajos que muestran mi forma de resolver problemas." />
+        <SectionHead eyebrow="Portafolio" title="Proyectos destacados" text={projectsNote} />
         <Reveal className="filters">
           {cats.map((c) => (
             <button key={c} className={`pill ${c === cat ? "pill--on" : ""}`} onClick={() => setCat(c)}>
@@ -215,7 +214,11 @@ const Home = () => {
           {shown.map((p, i) => (
             <Reveal key={p.name} delay={i * 60} className="card project">
               <div className="project__img">
-                <img src={`/${p.image}`} alt={`Captura de ${p.name}`} loading="lazy" />
+                {p.image ? (
+                  <img src={`/${p.image}`} alt={`Captura de ${p.name}`} loading="lazy" />
+                ) : (
+                  <div className="project__ph" aria-hidden="true">{p.icon}</div>
+                )}
                 <div className="project__links">
                   {p.demo && (
                     <a href={p.demo} target="_blank" rel="noreferrer" className="btn btn--sm btn--primary">
@@ -241,27 +244,6 @@ const Home = () => {
                   ))}
                 </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* BLOG */}
-      <section className="section container" id="blog">
-        <SectionHead eyebrow="Blog" title="Lo que estoy aprendiendo" />
-        <div className="posts">
-          {posts.map((p, i) => (
-            <Reveal key={p.title} delay={i * 80}>
-              <Link href={`/post/${p.title}`}>
-                <a className="card post">
-                  <span className="muted">
-                    {p.date} · {p.readTime}
-                  </span>
-                  <h3>{p.title}</h3>
-                  <p>{p.excerpt}</p>
-                  <span className="more">Leer más →</span>
-                </a>
-              </Link>
             </Reveal>
           ))}
         </div>

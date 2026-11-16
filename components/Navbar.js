@@ -57,11 +57,6 @@ const Navbar = () => {
               </a>
             </Link>
           ))}
-          <Link href="/blog">
-            <a className={pathname.startsWith("/blog") || pathname.startsWith("/post") ? "active" : ""} onClick={() => setOpen(false)}>
-              Blog
-            </a>
-          </Link>
           <Link href="/github">
             <a className={pathname === "/github" ? "active" : ""} onClick={() => setOpen(false)}>
               GitHub

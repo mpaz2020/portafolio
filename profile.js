@@ -1,172 +1,172 @@
 // ============================================================
 //  TODO el contenido del portafolio vive aquí. Edita este archivo
-//  y la web se actualiza sola. Los textos marcados como "ejemplo"
-//  son de relleno: reemplázalos por tus datos reales.
+//  y la web se actualiza sola.
 // ============================================================
 
 export const profile = {
   name: "Medardo Paz",
   initials: "MP",
-  roles: ["Desarrollador Full Stack", "Ingeniero de Software", "Constructor de productos web"],
+  roles: ["Ingeniero Informático", "Ingeniero de Software", "Desarrollador Full Stack"],
   tagline:
-    "Diseño y construyo aplicaciones web rápidas, escalables y bien cuidadas: del modelo de datos y la API hasta la última animación de la interfaz.",
-  location: "Lima, Perú",
+    "Ingeniero informático por la Universidad Nacional de Piura. Desarrollo aplicaciones web y móviles, APIs e integraciones industriales (OPC-UA, MQTT) para empresas en Perú.",
+  location: "Piura, Perú",
   available: true,
   availableText: "Disponible para nuevos proyectos",
-  photo: "/3052.png",
-  email: "tu-correo@ejemplo.com", // <- cambia por tu correo
+  photo: "/3052.png", // TODO: reemplaza por tu foto real (ej. "/medardo.jpg" en /public)
+  email: "medpazord2010@gmail.com",
   github: "mpaz2020", // usuario de GitHub (se usa en /github)
   socials: [
     { label: "GitHub", href: "https://github.com/mpaz2020" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/tu-usuario" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/medardo-paz-ordo%C3%B1ez-a6b3a6129" },
   ],
   cv: "", // ej: "/cv-medardo-paz.pdf" (coloca el PDF en /public). Vacío = botón oculto
   about: [
-    "Soy desarrollador full stack con experiencia construyendo productos de principio a fin: APIs con Node.js, bases de datos relacionales, y interfaces modernas con Vue y React.",
-    "Me importa el detalle: código legible, rendimiento medible, accesibilidad y una experiencia de usuario que se sienta cuidada. Trabajo bien en equipos pequeños y con autonomía.",
-    "Cuando no estoy programando, me gusta aprender nuevas herramientas, escribir sobre lo que descubro y mejorar procesos para que los equipos entreguen más rápido.",
+    "Soy ingeniero informático egresado de la Universidad Nacional de Piura. Desde diciembre de 2020 trabajo como ingeniero de software en TGI Ingeniería, donde diseño e implemento aplicaciones web y móviles, APIs REST y GraphQL, y manejo bases de datos relacionales.",
+    "Mi trabajo combina el desarrollo de software con la integración de sistemas industriales: protocolos como OPC-UA, MQTT y WebSockets, además de frameworks como Laravel, Vue, Angular, React, Quasar, Ionic y Flutter.",
+    "Antes de dedicarme al software pasé por soporte y jefatura de informática, análisis de datos y sistemas GIS, lo que me da una visión práctica de cómo la tecnología resuelve problemas reales de operación.",
   ],
 };
 
 export const stats = [
-  { value: "5+", label: "Años de experiencia" },
-  { value: "30+", label: "Proyectos entregados" },
-  { value: "12", label: "Tecnologías en producción" },
-  { value: "100%", label: "Compromiso con la calidad" },
-]; // ejemplo: ajusta a tus números reales
+  { value: "10+", label: "Años en el sector TI" },
+  { value: "5+", label: "Años como ingeniero de software" },
+  { value: "6", label: "Organizaciones donde he trabajado" },
+  { value: "40+", label: "Repositorios públicos en GitHub" },
+];
 
 export const services = [
-  { icon: "⚡", title: "Aplicaciones web", text: "SPAs y sitios con Next.js, React o Vue: rápidos, accesibles y optimizados para SEO." },
-  { icon: "🧩", title: "APIs y backend", text: "Servicios REST con Node.js y PHP, autenticación, integraciones y buenas prácticas." },
-  { icon: "🗄️", title: "Bases de datos", text: "Modelado, consultas y optimización en SQL Server y otros motores relacionales." },
-  { icon: "🚀", title: "Despliegue y mejora", text: "CI/CD, monitoreo y refactorización para que el producto escale sin dolor." },
+  { icon: "⚡", title: "Aplicaciones web", text: "Frontends con Vue, React o Angular y backends con Laravel, PHP y Node.js." },
+  { icon: "📱", title: "Apps móviles", text: "Aplicaciones multiplataforma con Flutter, Ionic y Quasar." },
+  { icon: "📡", title: "Integración industrial", text: "Conexión de equipos y sensores con OPC-UA, MQTT, Modbus y WebSockets." },
+  { icon: "🗄️", title: "APIs y datos", text: "APIs REST y GraphQL, y diseño y consultas en bases de datos relacionales." },
 ];
 
 export const skillGroups = [
-  { group: "Frontend", items: ["JavaScript", "React", "Next.js", "Vue", "HTML & CSS", "Angular"] },
-  { group: "Backend", items: ["Node.js", "Express", "PHP", "REST APIs"] },
-  { group: "Datos", items: ["SQL Server", "MySQL", "MongoDB"] },
-  { group: "Herramientas", items: ["Git & GitHub", "Docker", "Vercel", "Figma"] },
+  { group: "Frontend", items: ["JavaScript", "Vue", "React", "Angular", "Quasar", "Ionic"] },
+  { group: "Backend", items: ["Node.js", "PHP", "Laravel", "REST", "GraphQL"] },
+  { group: "Datos", items: ["SQL", "SQL Server", "Bases de datos relacionales"] },
+  { group: "IoT / Industrial", items: ["OPC-UA", "MQTT", "WebSockets", "Modbus"] },
+  { group: "Móvil", items: ["Flutter", "Ionic"] },
+  { group: "Explorando", items: ["Go", "Python / FastAPI", "NestJS", "Astro", "Bun"] },
 ];
 
 export const experiences = [
   {
-    title: "Desarrollador Full Stack",
-    company: "Empresa actual (ejemplo)",
-    from: "2022",
+    title: "Ingeniero de Software",
+    company: "TGI Ingeniería",
+    from: "Dic 2020",
     to: "Actualidad",
     description:
-      "Liderazgo técnico de la plataforma web: diseño de APIs, modelado de base de datos y construcción de interfaces reutilizables.",
-    highlights: ["Reducción del tiempo de carga en un 40%", "Arquitectura de componentes compartidos", "Mentoría a desarrolladores junior"],
+      "Diseño e implementación de aplicaciones web y apps móviles, gestión de bases de datos relacionales y desarrollo de APIs REST y GraphQL.",
+    highlights: [
+      "Frameworks: Laravel, Vue.js, Angular, React, Quasar, Ionic y Flutter",
+      "Integración con OPC-UA, MQTT y WebSockets",
+      "Lenguajes: JavaScript, PHP, SQL y Node.js",
+    ],
   },
   {
-    title: "Desarrollador Backend",
-    company: "Empresa anterior (ejemplo)",
-    from: "2020",
-    to: "2022",
-    description: "Desarrollo y mantenimiento de servicios en Node.js y PHP, integraciones con terceros y reportes sobre SQL Server.",
-    highlights: ["Migración de módulos legacy a Node.js", "Optimización de consultas críticas", "Documentación de APIs"],
+    title: "Auxiliar de Operaciones",
+    company: "Inspectorate Services Perú SAC – Grupo Bureau Veritas",
+    from: "Oct 2020",
+    to: "Nov 2020",
+    description: "Análisis y gestión de planes de muestreo a empresas exportadoras de productos hidrobiológicos.",
   },
   {
-    title: "Desarrollador Frontend",
-    company: "Primer empleo (ejemplo)",
-    from: "2018",
-    to: "2020",
-    description: "Implementación de interfaces responsivas con JavaScript y Vue a partir de diseños en Figma.",
-    highlights: ["Sistema de diseño interno", "Mejoras de accesibilidad", "Pruebas end-to-end"],
+    title: "Asistente GIS",
+    company: "Ema Evolution Tecnológica EIRL",
+    from: "Dic 2019",
+    to: "Mar 2020",
+    description: "Proyecto de inventario físico de redes primarias y secundarias para Electronoroeste S.A.",
+    highlights: ["Actualización y registro de información técnica de redes eléctricas de media y baja tensión en el sistema Small World"],
+  },
+  {
+    title: "Jefe de Informática",
+    company: "Corporación Caspat SAC",
+    from: "Abr 2017",
+    to: "Nov 2019",
+    description: "Soporte técnico y administración de los sistemas SIGO Proveedores y QW Proveedores.",
+    highlights: [
+      "Apoyo en compras, almacenamiento y distribución para el programa PNAE Qali Warma UT Piura",
+      "Presentación y valorización de expedientes de conformidad de entrega para pago",
+    ],
+  },
+  {
+    title: "Asistente en Ingeniería Informática",
+    company: "EPS GRAU S.A.",
+    from: "Mar 2016",
+    to: "Mar 2017",
+    description: "Verificación de consumos menores a 10 m³ y evaluación de incidencias de toma de lectura en la zona de Piura.",
+    highlights: [
+      "Análisis de consumos atípicos sobre datos exportados del sistema comercial",
+      "Preparación y asignación de carga de trabajo al personal de inspección en campo",
+    ],
+  },
+  {
+    title: "Operador Informático de local de evaluación",
+    company: "INEI y Ministerio de Educación",
+    from: "2015",
+    to: "2024",
+    description: "Participación en varios procesos de evaluación nacional (de 3 a 4 días cada uno).",
+    highlights: ["Verificación de identidad del personal a cargo del examen", "Control de asistencia e inventario de materiales"],
   },
 ];
 
 export const education = [
-  { title: "Ingeniería de Sistemas / Software (ejemplo)", place: "Universidad (ejemplo)", year: "2013 – 2018" },
-  { title: "Certificaciones en la nube y desarrollo web (ejemplo)", place: "Plataformas en línea", year: "2019 – hoy" },
+  { title: "Ingeniero Informático", place: "Universidad Nacional de Piura", year: "5 años" },
 ];
 
+export const projectsNote =
+  "Muchos de los proyectos que desarrollo en TGI Ingeniería son privados o de clientes; puedo mostrarlos o describirlos a pedido. Aquí tienes una selección de trabajos públicos.";
+
+// Sin "image" se muestra un fondo con ícono. Cuando tengas capturas, ponlas en /public
+// y agrega: image: "mi-captura.png"
 export const projects = [
   {
-    name: "Plataforma de gestión",
-    description: "Panel administrativo con roles, reportes en tiempo real y exportación de datos para equipos de operaciones.",
-    image: "portfolio1.jpeg",
-    tags: ["Vue", "Node.js", "SQL Server"],
-    category: "Full Stack",
-    demo: "#",
-    repo: "#",
-    featured: true,
+    name: "Sistema de asistencia",
+    description: "Servicio de Windows en .NET 8 para integrar un terminal biométrico ZKTeco.",
+    icon: "🕒",
+    tags: [".NET 8", "Windows Service", "ZKTeco"],
+    category: "Integración",
+    repo: "https://github.com/mpaz2020/sistema-asistencia",
+  },
+  {
+    name: "Colector Modbus / cliente OPC-UA",
+    description: "Colector de datos Modbus en Node.js y clientes OPC-UA (Node.js y Python).",
+    icon: "📡",
+    tags: ["Node.js", "Python", "OPC-UA", "Modbus"],
+    category: "Integración",
+    repo: "https://github.com/mpaz2020/ColectorModbus",
+  },
+  {
+    name: "Perupez",
+    description: "Aplicación desarrollada para Perupez Sechura.",
+    icon: "🐟",
+    tags: ["TypeScript"],
+    category: "Web",
+    repo: "https://github.com/mpaz2020/perupez",
+  },
+  {
+    name: "SGIP Agroaurora",
+    description: "Aplicación web desarrollada con Vue.",
+    icon: "🌱",
+    tags: ["Vue"],
+    category: "Web",
+    repo: "https://github.com/mpaz2020/sgip-agroaurora",
   },
   {
     name: "Tienda en línea",
-    description: "E-commerce con carrito, pasarela de pagos y panel de inventario, optimizado para SEO y velocidad.",
-    image: "portfolio2.jpg",
-    tags: ["Next.js", "Node.js", "MongoDB"],
-    category: "Full Stack",
-    demo: "#",
-    repo: "#",
-    featured: true,
+    description: "Tienda virtual construida con Laravel y plantillas Blade.",
+    icon: "🛒",
+    tags: ["Laravel", "PHP", "Blade"],
+    category: "Web",
+    repo: "https://github.com/mpaz2020/tiendaenlinea",
   },
   {
-    name: "API de facturación",
-    description: "Servicio REST documentado con autenticación JWT, colas de trabajo y pruebas automatizadas.",
-    image: "portfolio3.png",
-    tags: ["Node.js", "Express", "SQL Server"],
-    category: "Backend",
-    demo: "",
-    repo: "#",
-  },
-  {
-    name: "Landing corporativa",
-    description: "Sitio institucional multilenguaje con animaciones sutiles y puntaje 100 en Lighthouse.",
-    image: "portfolio4.png",
-    tags: ["React", "CSS"],
-    category: "Frontend",
-    demo: "#",
-    repo: "",
-  },
-  {
-    name: "App de reservas",
-    description: "Aplicación para agendar citas con calendario interactivo, notificaciones y pagos.",
-    image: "portfolio5.jpeg",
-    tags: ["Vue", "PHP", "MySQL"],
-    category: "Full Stack",
-    demo: "#",
-    repo: "#",
-  },
-  {
-    name: "Dashboard analítico",
-    description: "Visualización de métricas de negocio con gráficos interactivos y filtros dinámicos.",
-    image: "portfolio6.jpeg",
-    tags: ["React", "Node.js"],
-    category: "Frontend",
-    demo: "#",
-    repo: "#",
-  },
-]; // ejemplo: reemplaza por tus proyectos reales
-
-export const posts = [
-  {
-    title: "React",
-    date: "2026-03-10",
-    readTime: "5 min",
-    excerpt: "Por qué sigo eligiendo React para interfaces complejas y cómo organizo mis componentes.",
-    content:
-      "React sigue siendo una de las mejores opciones para construir interfaces complejas. En este artículo comparto cómo estructuro componentes, manejo el estado y evito re-renderizados innecesarios.\n\nEl contenido completo es un ejemplo: reemplázalo por tu propio artículo en profile.js.",
-    image: "https://sigdeletras.com/images/blog/202004_react_leaflet/react.png",
-  },
-  {
-    title: "Angular",
-    date: "2026-02-02",
-    readTime: "4 min",
-    excerpt: "Lo que aprendí al trabajar con Angular en proyectos empresariales grandes.",
-    content:
-      "Angular ofrece una estructura sólida para equipos grandes. Aquí repaso módulos, inyección de dependencias y cuándo realmente vale la pena elegirlo.\n\nContenido de ejemplo: edítalo en profile.js.",
-    image: "https://cdn.appdesign.dev/wp-content/uploads/2020/08/Agencia-desarrollo-Angular-JS.jpg",
-  },
-  {
-    title: "Vue",
-    date: "2026-01-15",
-    readTime: "6 min",
-    excerpt: "Vue 3, la Composition API y un flujo de trabajo cómodo para productos rápidos.",
-    content:
-      "Vue destaca por su curva de aprendizaje amable y su excelente ergonomía. Veamos la Composition API y patrones para mantener el código ordenado.\n\nContenido de ejemplo: edítalo en profile.js.",
-    image: "https://victorroblesweb.es/wp-content/uploads/2017/03/vuejs2-victorroblesweb.jpg",
+    name: "Dashboards",
+    description: "Paneles de control en Vue y aplicaciones móviles en Flutter.",
+    icon: "📊",
+    tags: ["Vue", "Flutter", "Dart"],
+    category: "Móvil",
+    repo: "https://github.com/mpaz2020/dashboard",
   },
 ];
